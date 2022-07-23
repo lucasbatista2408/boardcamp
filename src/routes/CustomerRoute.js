@@ -1,10 +1,14 @@
 import { Router } from 'express'
-import getCostumers from '../controllers/Customers/getCostumers.js';
-
+import getCustomers from '../controllers/Customers/getCustomers.js';
+import postCustomers from '../controllers/Customers/postCustomers.js';
+import schemaCustomers from '../middleware/midCustomers/schemaCustomers.js';
+import existsCustomers from '../middleware/midCustomers/existsCustomers.js';
 
 
 const router = Router();
 
-router.get('/customers', getCostumers)
+router.get('/customers', getCustomers)
+router.get('/customers/:id') //TO-DO
+router.post('/customers', existsCustomers, schemaCustomers, postCustomers)
 
 export default router;

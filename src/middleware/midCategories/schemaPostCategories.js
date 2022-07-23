@@ -14,6 +14,7 @@ export default async function schemaPostCategories(req, res, next){
   if (error) {
       return res.sendStatus(400);
   } 
-    next();
+  
+  next();
 
 }
