@@ -4,6 +4,8 @@
 
   export const queryGames = `SELECT ${columnsJoinGames} FROM games JOIN categories ON games."categoryId"=categories.Id;`
 
+  export const queryGetCustomers = "SELECT*FROM customers";
+
   export const queryPostGames = 'INSERT INTO games (name, image, "stockTotal", "categoryId", "pricePerDay") VALUES ($1, $2, $3, $4, $5)'
 
   export const queryGetCategories = "SELECT*FROM categories"
@@ -13,3 +15,7 @@
   export const queryPostCustomers = `INSERT INTO customers (${columnsPostCustomers}) VALUES ($1,$2,$3,$4)`
 
   export const queryExistsCustomers = "SELECT*FROM customers WHERE cpf=$1"
+
+  export const queryExistsCustomersById = "SELECT*FROM customers WHERE id=$1"
+
+  export const queryGetCustomersById = 'SELECT*FROM customers WHERE id=$1'

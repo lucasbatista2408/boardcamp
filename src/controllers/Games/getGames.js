@@ -12,12 +12,14 @@ export default async function getCategories(req, res){
 
     if(gameName?.length > 0){
 
-      const filterGames = games.filter((game) => game.name.toLowerCase().includes(gameName.toLowerCase()))
+      const filterGames = games.filter((game) => game.name.toLowerCase().startsWith(gameName.toLowerCase()))
 
       if(filterGames.length > 0){
 
         return res.send(filterGames)
 
+      } else {
+        return res.sendStatus(404)
       }
 
     } else{

@@ -6,8 +6,10 @@ import existsGame from '../middleware/midGames/existsGame.js';
 
 const router = Router();
 
+// shows games in general and filtered by query string
 router.get("/games", getGames)
 
+// posts a new game
 router.post("/games", schemaPostGames, existsGame, postGames)
 
 export default router;
