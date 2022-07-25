@@ -4,6 +4,7 @@ import CategoryRoute from '../src/routes/CategoryRoute.js'
 import GameRoute from '../src/routes/GameRoute.js'
 import dotenv from 'dotenv'
 import CostumerRoute from '../src/routes/CustomerRoute.js'
+import RentalRoute from '../src/routes/RentalRoute.js'
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -15,6 +16,7 @@ dotenv.config();
 app.use(CategoryRoute);
 app.use(GameRoute);
 app.use(CostumerRoute);
+app.use(RentalRoute);
 
 
 
